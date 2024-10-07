@@ -5,6 +5,10 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+		<canvas id="stage" width="1920" height="1080"></canvas>
+		<br>
+		<button id="zoomButton" onclick="zoom();">ZOOM</button>
+		<br>
 		<script src="myImage.js"></script>
 		<script>
 			const myImages = initializeImages(100);
@@ -14,6 +18,22 @@
 			myImages.forEach((img) => {
 				img.addClass("image-thumb")
 			});
+
+			const ctx = stage.getContext("2d");
+			let offset = 0;
+
+			function zoom() {
+				const index = Math.floor(offset);
+				const img = myImages[index];
+				img.draw(ctx);
+
+				offset += 0.01;
+				if(offset < myImages.length) {
+					requestAnimationFrame(zoom);
+				} else {
+					offset = 0;
+				}
+			}
 
 			function initializeImages(num) {
 				const imgs = [];
