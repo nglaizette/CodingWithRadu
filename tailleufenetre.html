@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout avec 4 colonnes</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        .section {
+            height: 100%;
+        }
+
+        .fixed-width-1 {
+            width: 120px;
+            background-color: lightblue;
+        }
+
+        .flexible-width {
+            flex-grow: 1;
+            background-color: lightgreen;
+        }
+
+        .fixed-width-2 {
+            width: 100px;
+            background-color: lightcoral;
+        }
+
+        .fixed-width-3 {
+            width: 180px;
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="section fixed-width-1">120px</div>
+    <div class="section flexible-width">Flexible</div>
+    <div class="section fixed-width-2">100px</div>
+    <div class="section fixed-width-3">180px</div>
+</body>
+</html>
