@@ -38,8 +38,8 @@ class MyImage {
 		this.ctx.drawImage(centerImg.canvas, x, y, width, height);
 	}
 
-	draw(ctx) {
-		ctx.drawImage(this.canvas, 0, 0);
+	draw(ctx, left=0, top=0, width=0, height=0) {
+		ctx.drawImage(this.canvas, left, top, width, height);
 	}
 
 	addTo(parent) {
