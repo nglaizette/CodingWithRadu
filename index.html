@@ -23,6 +23,7 @@
 			let offset = 0;
 
 			function zoom() {
+				zoomButton.disabled = true;
 				const index = Math.floor(offset);
 				const img = myImages[index];
 				img.draw(ctx);
@@ -32,6 +33,7 @@
 					requestAnimationFrame(zoom);
 				} else {
 					offset = 0;
+					zoomButton.disabled = false;
 				}
 			}
 
