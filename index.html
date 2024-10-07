@@ -18,7 +18,7 @@
 			function initializeImages(num) {
 				const imgs = [];
 				for(let i=0; i < num; i++){
-					imgs.push(new MyImage());
+					imgs.push(new MyImage(i != 0 && imgs[i-1]));
 				}
 				return imgs;
 			}
