@@ -28,7 +28,7 @@
 				const img = myImages[index];
 
 				const percent = offset - index;
-				const scaler = percent;
+				const scaler = (1-percent)*2+1; // (1-percent) zoom out, from 3 to 1
 
 				const width = stage.width * scaler;
 				const height = stage.height * scaler;
